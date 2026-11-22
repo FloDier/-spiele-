@@ -1,5 +1,5 @@
 /* Offline-Unterstützung: erst Netzwerk, bei Fehler Cache */
-const CACHE = 'spiele-v3';
+const CACHE = 'spiele-v4';
 const FILES = ['./', 'index.html', 'style.css', 'manifest.json', 'icon.svg', 'icon-192.png',
   'js/core.js', 'js/solitaer.js', 'js/mahjong.js', 'js/sudoku.js', 'js/holdem.js', 'js/nonogramm.js', 'js/kinder.js', 'js/app.js'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });

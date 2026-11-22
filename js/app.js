@@ -34,10 +34,20 @@
         h('span', { class: 'ic' }, g.icon), h('b', null, g.name), h('small', null, g.desc), h('span', { class: 'st' }, st));
     };
     view.append(
+      h('button', { class: 'kids-btn', onclick: () => { location.hash = '#/kinder'; } },
+        h('span', { class: 'ic' }, '🧸'), h('b', null, 'Kinder'), h('small', null, 'Spiele für 4–7 Jahre')),
       h('h2', { class: 'sec' }, 'Spiele'),
-      h('div', { class: 'home' }, GAMES.filter(g => !g.kids).map(tile)),
-      h('h2', { class: 'sec' }, 'Für Kinder (4–7 Jahre)'),
-      h('div', { class: 'home kids' }, GAMES.filter(g => g.kids).map(tile)));
+      h('div', { class: 'home' }, GAMES.filter(g => !g.kids).map(tile)));
+  }
+
+  function kidsHome() {
+    title.textContent = '🧸 Kinder';
+    back.hidden = false; api.setStatus(''); api.setActions([]);
+    view.append(h('div', { class: 'home kids' }, GAMES.filter(g => g.kids).map(g => {
+      const s = stats(g.id);
+      return h('button', { class: 'tile', onclick: () => { location.hash = '#/' + g.id; } },
+        h('span', { class: 'ic' }, g.icon), h('b', null, g.name), h('span', { class: 'st' }, s.won ? `⭐ ${s.won}` : ''));
+    })));
   }
 
   function route() {
@@ -45,6 +55,7 @@
     document.querySelectorAll('.modal-bg').forEach(m => m.remove());
     view.innerHTML = ''; view.scrollTop = 0;
     const id = location.hash.replace(/^#\/?/, '');
+    if (id === 'kinder') return kidsHome();
     const g = GAMES.find(x => x.id === id);
     if (!g) return home();
     title.textContent = g.name; back.hidden = false;
@@ -52,7 +63,11 @@
     cleanup = g.mount(view, api) || null;
   }
 
-  back.onclick = () => { location.hash = ''; };
+  back.onclick = () => {
+    const id = location.hash.replace(/^#\/?/, '');
+    const g = GAMES.find(x => x.id === id);
+    location.hash = g && g.kids ? '#/kinder' : '';
+  };
   window.addEventListener('hashchange', route);
   route();
 

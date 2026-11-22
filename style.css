@@ -155,3 +155,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .balloon::after{content:'';position:absolute;bottom:-40px;left:50%;width:2px;height:40px;background:#fff9}
 .balloon.gold{background:radial-gradient(circle at 35% 30%,#fff6b0,#f5c451 60%,#c99512)}
 .boom{position:absolute;font-size:50px;pointer-events:none}
+.kids-btn{display:flex;align-items:center;gap:14px;width:calc(100% - 28px);max-width:872px;margin:14px auto 0;padding:16px 20px;border-radius:22px;border:2px solid #ffcc80;background:linear-gradient(120deg,#ffb74d,#f06292);color:#3b1d2a;text-align:left;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.kids-btn .ic{font-size:44px}
+.kids-btn b{font-size:22px}
+.kids-btn small{margin-left:auto;font-size:13px;color:#4a2635}
+.home.kids .tile{min-height:170px;align-items:center;justify-content:center;text-align:center}
+.home.kids .tile .ic{font-size:64px}
+.home.kids .tile b{font-size:20px}
+.home.kids .tile .st{margin-top:0}
