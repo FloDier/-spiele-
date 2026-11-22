@@ -110,3 +110,48 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ng-cell.r5{border-right:2px solid #111}.ng-cell.b5{border-bottom:2px solid #111}
 .ng-cell.hl{background:#fde68a}
 .pk-seat.me{justify-self:center;min-width:55%}
+
+/* Startseite: Abschnitte */
+.sec{max-width:900px;margin:14px auto 0;padding:0 16px;font-size:16px;color:var(--muted);font-weight:600}
+.home.kids .tile{background:linear-gradient(160deg,#ffb74d,#f06292);border-color:#ffcc80;color:#3b1d2a}
+.home.kids .tile small{color:#4a2635}
+.home.kids .tile .st{color:#5a1e3a}
+
+/* Kinder-Spiele */
+.kid{display:flex;flex-direction:column;align-items:center;gap:16px;padding:14px}
+.kid-big{font-size:26px;padding:14px 30px;border-radius:20px;border:0;background:var(--acc);color:#222;font-weight:700;box-shadow:0 4px 0 #b88a1f}
+.mem-grid{display:grid;gap:10px;width:100%}
+.mem-card{aspect-ratio:1;border-radius:18px;border:0;font-size:clamp(30px,11vw,64px);background:linear-gradient(145deg,#42a5f5,#1e63c4);box-shadow:0 4px 0 #154a94;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.mem-card:not(.up)::after{content:'?';color:#fff8;font-weight:800}
+.mem-card.up{background:#fffdf5;box-shadow:0 4px 0 #c9bf9c;transform:rotateY(0)}
+.mem-card.done{background:#d7f8de;box-shadow:0 4px 0 #8fd1a0}
+.count-field{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;width:100%;max-width:460px;background:#fffdf5;border-radius:20px;padding:10px;min-height:200px}
+.count-item{border:0;background:none;font-size:clamp(32px,11vw,56px);position:relative;padding:4px;aspect-ratio:1}
+.count-item.counted{background:#ffe48a;border-radius:50%}
+.count-item.counted::after{content:attr(data-n);position:absolute;top:-4px;right:-2px;background:#e53935;color:#fff;border-radius:50%;width:24px;height:24px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.kid-answers{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;width:100%;max-width:520px}
+.kid-ans{flex:1;min-width:90px;max-width:160px;border:0;border-radius:22px;background:#fffdf5;color:#222;box-shadow:0 5px 0 #c9bf9c;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.kid-ans b{font-size:44px;line-height:1}
+.kid-ans small{font-size:11px;color:#e53935;letter-spacing:1px;word-break:break-all;max-width:90px}
+.kid-ans.pic{font-size:clamp(44px,14vw,72px);aspect-ratio:1;justify-content:center}
+.kid-ans.right{background:#b9f5c8;box-shadow:0 5px 0 #6fcf88;transform:scale(1.08)}
+.kid-ans:disabled{opacity:.35}
+.shadow-box{background:#fffdf5;border-radius:26px;width:min(70vw,260px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.shadow{font-size:min(44vw,170px);filter:brightness(0);opacity:.85;transition:filter .5s,opacity .5s}
+.shadow.shown{filter:none;opacity:1}
+.confetti{position:fixed;top:-50px;z-index:1000;pointer-events:none;animation:fall 2.4s ease-in forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.paint{display:flex;flex-direction:column;padding:8px;gap:8px}
+.paint-cv{flex:1;width:100%;background:#fff;border-radius:16px;touch-action:none}
+.paint-bar{display:flex;flex-direction:column;gap:6px}
+.paint-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:2px}
+.paint .dot{flex:0 0 36px;height:36px;border-radius:50%;border:3px solid #fff4}
+.paint .dot.on{border-color:#fff;transform:scale(1.15)}
+.paint .tool{flex:0 0 44px;height:44px;border-radius:12px;border:2px solid var(--line);background:#1d4a3a;font-size:22px;display:flex;align-items:center;justify-content:center}
+.paint .tool.on{border-color:var(--acc);background:#3a6b55}
+.paint .sz{background:#fff;border-radius:50%;display:block}
+.balloons{position:relative;overflow:hidden;background:linear-gradient(#7ec8f5,#cdeefd);touch-action:none}
+.balloon{position:absolute;left:0;top:0;border-radius:50% 50% 48% 48% / 45% 45% 55% 55%;box-shadow:inset -10px -12px 0 rgba(0,0,0,.15),inset 8px 8px 0 rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:30px}
+.balloon::after{content:'';position:absolute;bottom:-40px;left:50%;width:2px;height:40px;background:#fff9}
+.balloon.gold{background:radial-gradient(circle at 35% 30%,#fff6b0,#f5c451 60%,#c99512)}
+.boom{position:absolute;font-size:50px;pointer-events:none}

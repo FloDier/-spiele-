@@ -1,7 +1,7 @@
 /* Offline-Unterstützung: erst Netzwerk, bei Fehler Cache */
-const CACHE = 'spiele-v1';
+const CACHE = 'spiele-v2';
 const FILES = ['./', 'index.html', 'style.css', 'manifest.json', 'icon.svg', 'icon-192.png',
-  'js/core.js', 'js/solitaer.js', 'js/mahjong.js', 'js/sudoku.js', 'js/holdem.js', 'js/nonogramm.js', 'js/app.js'];
+  'js/core.js', 'js/solitaer.js', 'js/mahjong.js', 'js/sudoku.js', 'js/holdem.js', 'js/nonogramm.js', 'js/kinder.js', 'js/app.js'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))));

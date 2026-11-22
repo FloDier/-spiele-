@@ -22,13 +22,22 @@
   function home() {
     title.textContent = 'Spielesammlung';
     back.hidden = true; api.setStatus(''); api.setActions([]);
-    view.append(h('div', { class: 'home' }, GAMES.map(g => {
+    const tile = g => {
       const s = stats(g.id);
-      let st = s.played ? `Gespielt ${s.played} · Gewonnen ${s.won}` : 'Noch nicht gespielt';
-      if (s.best != null && g.timed !== false) st += ` · Best ${fmtTime(s.best)}`;
+      let st;
+      if (g.kids) st = s.won ? `⭐ ${s.won}` : '';
+      else {
+        st = s.played ? `Gespielt ${s.played} · Gewonnen ${s.won}` : 'Noch nicht gespielt';
+        if (s.best != null && g.timed !== false) st += ` · Best ${fmtTime(s.best)}`;
+      }
       return h('button', { class: 'tile', onclick: () => { location.hash = '#/' + g.id; } },
         h('span', { class: 'ic' }, g.icon), h('b', null, g.name), h('small', null, g.desc), h('span', { class: 'st' }, st));
-    })));
+    };
+    view.append(
+      h('h2', { class: 'sec' }, 'Spiele'),
+      h('div', { class: 'home' }, GAMES.filter(g => !g.kids).map(tile)),
+      h('h2', { class: 'sec' }, 'Für Kinder (4–7 Jahre)'),
+      h('div', { class: 'home kids' }, GAMES.filter(g => g.kids).map(tile)));
   }
 
   function route() {
