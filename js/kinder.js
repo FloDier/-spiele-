@@ -54,7 +54,7 @@ const KID = (() => {
     ['🐢', 'Schildkröte'], ['🐟', 'Fisch'], ['🦋', 'Schmetterling'], ['🐞', 'Marienkäfer'], ['🍎', 'Apfel'], ['🍌', 'Banane'], ['🍓', 'Erdbeere'],
     ['🚗', 'Auto'], ['🚂', 'Zug'], ['✈️', 'Flugzeug'], ['⚽', 'Ball'], ['🌻', 'Blume'], ['⭐', 'Stern'], ['🦄', 'Einhorn'], ['🐳', 'Wal'], ['🦕', 'Dino']];
   const pickItems = n => shuffle(ITEMS.slice()).slice(0, n);
-  return { sfx, speak, hush, confetti, wiggle, praise, NUM, ITEMS, pickItems };
+  return { sfx, tone, speak, hush, confetti, wiggle, praise, NUM, ITEMS, pickItems };
 })();
 
 /* ---------- Memory ---------- */

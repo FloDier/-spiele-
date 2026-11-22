@@ -163,3 +163,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .home.kids .tile .ic{font-size:64px}
 .home.kids .tile b{font-size:20px}
 .home.kids .tile .st{margin-top:0}
+/* Jump & Run */
+.jr{position:relative;overflow:hidden;touch-action:none}
+.jr canvas{display:block;width:100%;height:100%;touch-action:none}
+.jr-pad{position:absolute;left:14px;bottom:calc(14px + var(--safe-b));width:150px;height:76px;display:flex;border-radius:38px;background:rgba(0,0,0,.28);border:2px solid rgba(255,255,255,.45);touch-action:none}
+.jr-pad span{flex:1;display:flex;align-items:center;justify-content:center;font-size:30px;color:#fff;border-radius:38px}
+.jr-pad[data-s=L] span:first-child,.jr-pad[data-s=R] span:last-child{background:rgba(255,255,255,.3)}
+.jr-jump{position:absolute;right:16px;bottom:calc(14px + var(--safe-b));width:84px;height:84px;border-radius:50%;background:rgba(0,0,0,.28);border:2px solid rgba(255,255,255,.45);color:#fff;font-size:38px;display:flex;align-items:center;justify-content:center;touch-action:none}
+.jr-jump.on{background:rgba(255,255,255,.35)}
